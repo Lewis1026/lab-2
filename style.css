@@ -1,16 +1,21 @@
 body {
+    /* Base setup */
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f0f0f0;
 }
 
 .main-container {
-    max-width: 400px; /* Simulate phone screen width */
+    /* Simulates a phone screen width */
+    max-width: 400px; 
     margin: 0 auto;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* Ensure no scrollbar and sets context for absolute positioning if needed */
+    overflow: hidden; 
 }
 
+/* --- Header & User Info --- */
 .header {
     background-color: #5C1E91; /* Purple */
     color: white;
@@ -28,43 +33,51 @@ body {
     border-bottom: 1px solid #eee;
 }
 
+/* --- Grid Container for Main Content --- */
 .content-grid {
     display: grid;
-    /* Define columns and rows. Adjust based on exact spacing and number of items */
-    /* Example: one main column for general content, maybe two for specific rows */
-    grid-template-columns: 1fr; /* Single column for most items */
-    gap: 10px; /* Space between grid items */
-    padding: 10px;
+    /* Defines a single column for all items to stack vertically */
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+    padding: 0 20px 20px 20px; /* Padding for the sides and bottom */
 }
 
+/* --- Dog Image (The Overlapping Element) --- */
 .dog-image-container {
-    display: flex; /* Use flexbox to center the image */
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
-    /* The circular shape will be applied to the image itself */
+    /* We don't need top padding here, as the image will be positioned manually */
+    padding: 0; 
+    
+    /* Pull the dog image container up to overlap the user-info-bar */
+    margin-top: -100px; 
+    position: relative;
+    /* Ensure the image is on top of the green box */
+    z-index: 2; 
 }
 
 .dog-image {
-    width: 250px; /* Adjust size */
-    height: 250px; /* Ensure equal height for circular shape */
+    width: 250px; 
+    height: 250px; 
     border-radius: 50%; /* Makes it circular */
-    object-fit: cover; /* Ensures image covers the circle without distortion */
-    border: 5px solid white; /* White border as seen in the image */
-    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Subtle shadow */
-    margin-top: -80px; /* Move it up to overlap with the user info bar */
-    z-index: 2; /* Bring it above other elements if needed */
-    position: relative; /* Needed for z-index to work against siblings */
+    object-fit: cover; /* Ensures image fills the circle */
+    border: 5px solid white; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); 
 }
 
+/* --- Green Info Box (The Element Underneath) --- */
 .green-info-box {
     background-color: #D4EDDA; /* Light green */
     color: #155724; /* Dark green text */
     padding: 20px;
     border-radius: 10px;
-    margin: -60px 0 10px; /* Pull it up to sit behind the dog image */
-    z-index: 1; /* Place behind dog image */
+    
+    /* Pull the green box up to sit behind the dog image */
+    margin-top: -100px; 
     position: relative;
+    /* Place behind the dog image (which has z-index: 2) */
+    z-index: 1; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -76,24 +89,33 @@ body {
     font-weight: bold;
 }
 
+.green-info-box .breed-age-row {
+    font-weight: normal; /* Breed/age text is usually less bold */
+    font-size: 1em;
+}
+
 .green-info-box .address-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Aligns text neatly with the icon */
     margin-top: 10px;
     font-size: 0.9em;
     color: #388e3c;
+    line-height: 1.4;
 }
 
 .green-info-box .location-icon {
     margin-right: 5px;
+    margin-top: 1px;
 }
 
+/* --- Owner Section --- */
 .owner-section {
     display: flex;
     align-items: center;
     padding: 15px 0;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
+    margin-top: 5px; /* Add slight space after green box */
 }
 
 .owner-image {
@@ -107,7 +129,7 @@ body {
 .owner-details {
     flex-grow: 1;
     display: flex;
-    flex-direction: column; /* Stack name/date above title */
+    flex-direction: column;
 }
 
 .owner-name-date {
@@ -123,8 +145,9 @@ body {
     color: #666;
 }
 
+/* --- Description & Buttons --- */
 .description-text {
-    padding: 15px 0;
+    padding: 15px 0 10px 0;
     font-size: 0.95em;
     line-height: 1.5;
     color: #333;
@@ -132,9 +155,8 @@ body {
 
 .buttons-section {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding-top: 10px;
 }
 
 .heart-button {
@@ -159,7 +181,7 @@ body {
     font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
-    flex-grow: 1; /* Take up remaining space */
-    margin-left: 15px; /* Space from heart button */
+    flex-grow: 1; 
+    margin-left: 15px; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
