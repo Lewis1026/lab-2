@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.main-container {
+    max-width: 400px; /* Simulate phone screen width */
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    background-color: #5C1E91; /* Purple */
+    color: white;
+    padding: 10px;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+.user-info-bar {
+    background-color: white;
+    padding: 15px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee;
+}
+
+.content-grid {
+    display: grid;
+    /* Define columns and rows. Adjust based on exact spacing and number of items */
+    /* Example: one main column for general content, maybe two for specific rows */
+    grid-template-columns: 1fr; /* Single column for most items */
+    gap: 10px; /* Space between grid items */
+    padding: 10px;
+}
+
+.dog-image-container {
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    /* The circular shape will be applied to the image itself */
+}
+
+.dog-image {
+    width: 250px; /* Adjust size */
+    height: 250px; /* Ensure equal height for circular shape */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures image covers the circle without distortion */
+    border: 5px solid white; /* White border as seen in the image */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Subtle shadow */
+    margin-top: -80px; /* Move it up to overlap with the user info bar */
+    z-index: 2; /* Bring it above other elements if needed */
+    position: relative; /* Needed for z-index to work against siblings */
+}
+
+.green-info-box {
+    background-color: #D4EDDA; /* Light green */
+    color: #155724; /* Dark green text */
+    padding: 20px;
+    border-radius: 10px;
+    margin: -60px 0 10px; /* Pull it up to sit behind the dog image */
+    z-index: 1; /* Place behind dog image */
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.green-info-box .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.green-info-box .address-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #388e3c;
+}
+
+.green-info-box .location-icon {
+    margin-right: 5px;
+}
+
+.owner-section {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.owner-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.owner-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; /* Stack name/date above title */
+}
+
+.owner-name-date {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.owner-title {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.description-text {
+    padding: 15px 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #333;
+}
+
+.buttons-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.heart-button {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.adoption-button {
+    background-color: #5BC0DE; /* Light blue */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    flex-grow: 1; /* Take up remaining space */
+    margin-left: 15px; /* Space from heart button */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
