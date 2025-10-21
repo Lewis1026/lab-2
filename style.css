@@ -51,7 +51,7 @@ body {
     padding: 0; 
     
     /* Pull the dog image container up to overlap the user-info-bar */
-    margin-top: -30px; 
+    margin-top: -10px; 
     position: relative;
     /* Ensure the image is on top of the green box */
     z-index: 2; 
@@ -74,7 +74,7 @@ body {
     border-radius: 10px;
     
     /* Pull the green box up to sit behind the dog image */
-    margin-top: -100px; 
+    margin-top: -170px; 
     position: relative;
     /* Place behind the dog image (which has z-index: 2) */
     z-index: 1; 
