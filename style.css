@@ -70,14 +70,14 @@ body {
 .green-info-box {
     background-color: #D4EDDA; /* Light green */
     color: #155724; /* Dark green text */
-    padding: 100px 20px 20px 20px;
+    padding: 20px;
     border-radius: 10px;
     
     /* Pull the green box up to sit behind the dog image */
-    margin-top: -140px; 
-    position: relative;
+    margin-top: 10px; 
+    position: static;
     /* Place behind the dog image (which has z-index: 2) */
-    z-index: 1; 
+    z-index: auto; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
