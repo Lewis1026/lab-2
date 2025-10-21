@@ -51,7 +51,7 @@ body {
     padding: 0; 
     
     /* Pull the dog image container up to overlap the user-info-bar */
-    margin-top: -10px; 
+    margin-top: 0px; 
     position: relative;
     /* Ensure the image is on top of the green box */
     z-index: 2; 
@@ -70,11 +70,11 @@ body {
 .green-info-box {
     background-color: #D4EDDA; /* Light green */
     color: #155724; /* Dark green text */
-    padding: 20px;
+    padding: 100px 20px 20px 20px;
     border-radius: 10px;
     
     /* Pull the green box up to sit behind the dog image */
-    margin-top: -170px; 
+    margin-top: -140px; 
     position: relative;
     /* Place behind the dog image (which has z-index: 2) */
     z-index: 1; 
